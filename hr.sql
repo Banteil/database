@@ -142,3 +142,25 @@ FROM
 	EMPLOYEES
 WHERE
 	COMMISSION_PCT IS NOT NULL;
+
+-- 함수
+-- 18. FIRST_NAME이 Curtis인 사람의 first_name, last_name, email, phone_number, job_id 조회
+-- 단, job_id 결과는 소문자로 출력
+SELECT FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, LOWER(JOB_ID)
+FROM EMPLOYEES
+WHERE FIRST_NAME = 'Curtis';
+-- 19. 부서번호가 60,70,80,90인 사원들의 사원번호, first_name, hire_date, job_id 조회
+-- 단, job_id가 IT_PORG인 사원의 경우 프로그래머로 변경하여 출력
+SELECT EMPLOYEE_ID, FIRST_NAME, HIRE_DATE, REPLACE(JOB_ID, 'IT_PROG', 'PROGRAMMER')
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID IN (60,70,80,90);
+-- 20. job_id가 AD_PRES, PU_CLERK인 사원들의 사원번호, first_name, last_name, 부서번호, job_id 조회
+-- 단, 사원명은 FIRST_NAME과 LAST_NAME을 연결하여 출력하시오
+SELECT EMPLOYEE_ID, CONCAT(FIRST_NAME, CONCAT(' ', LAST_NAME)) AS NAME, DEPARTMENT_ID, JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID IN ('AD_PRES','PU_CLERK');
+
+SELECT EMPLOYEE_ID, (FIRST_NAME || ' ' || LAST_NAME) AS NAME, DEPARTMENT_ID, JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID IN ('AD_PRES','PU_CLERK');
+
