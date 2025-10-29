@@ -6,3 +6,8 @@ ALTER SESSION SET "_oracle_script"=TRUE;
 --@C:\database\db-sample-schemas-main\human_resources\hr_install.SQL
 --@C:\app\soldesk\product\21c\dbhomeXE\rdbms\admin\scott.SQL
 --sys AS sysdba
+
+-- 권한부여 : GRANT
+GRANT CREATE VIEW TO SCOTT;
+GRANT CREATE SYNONYM TO SCOTT;
+GRANT CREATE PUBLIC SYNONYM TO SCOTT;
