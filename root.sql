@@ -155,3 +155,8 @@ drop user 'TEST1'@'localhost';
 
 -- 비밀번호 변경
 ALTER USER 'TEST1'@'localhost' IDENTIFIED BY '12345';
+
+
+create user 'javadb'@'localhost' IDENTIFIED by '12345';
+grant all privileges on exam.* to 'javadb'@'localhost';
+flush privileges;
