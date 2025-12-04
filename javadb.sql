@@ -17,6 +17,8 @@ DEPT_ID VARCHAR2(4) REFERENCES DEPARTMENT(DEPT_ID) ON DELETE CASCADE);
 
 INSERT INTO STUDENT VALUES('20250001', '홍길동', 163.5, 'A001');
 INSERT INTO STUDENT VALUES('20250002', '성춘향', 155.7, 'A002');
+update professor set prof_name='길동' where prof_id='P001';
+delete from student where student_id='20250003';
 
 --professor(교수)
 -- 교수코드(prof_id), 교수명(prof_name), 학과코드(dept_id)
@@ -54,3 +56,4 @@ SUBJ_ID VARCHAR2(4) REFERENCES SUBJECT(SUBJ_ID) ON DELETE CASCADE,
 ENROLL_DATE DATE);
 
 INSERT INTO ENROLLMENT VALUES(SEQ_ENROLLMENT_ENROLLID.NEXTVAL, '20250001', 'S001', '2025-06-30');
+
